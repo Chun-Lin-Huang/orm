@@ -4,14 +4,14 @@ const { syncPromise } = require('./orm');
 async function testRelations() {
   try {
     // 查詢學生及其所屬系所
-    const student = await Student.findByPk('S10811001', { // 改成 S10811001 即可
+    const student = await Student.findByPk('S10811001', {
       include: [Department]
     });
     
     console.log(`學生 ${student.Name} 屬於 ${student.Department.Name} 系`);
     
     // 查詢學生及其選修的所有課程
-    const studentWithCourses = await Student.findByPk('S10811001', { // 改成 S10811001 即可
+    const studentWithCourses = await Student.findByPk('S10811001', {
       include: [Course]
     });
     
@@ -21,7 +21,7 @@ async function testRelations() {
     });
     
     // 查詢課程及其選修的學生
-    const courseWithStudents = await Course.findByPk('CS101001', { // 改成 CS101001 即可
+    const courseWithStudents = await Course.findByPk('CS101001', { 
       include: [Student]
     });
     

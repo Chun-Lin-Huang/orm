@@ -70,7 +70,7 @@ async function transferStudent(studentId, oldDeptId, newDeptId) {
 
 syncPromise
   .then(() => {
-    return transferStudent('S10811005', 'CS001', 'EE001');
+    return transferStudent('S10811005', 'EE001', 'CS001');
   })
   .catch((err) => {
     console.error('初始化失敗，轉系功能未執行：', err);
